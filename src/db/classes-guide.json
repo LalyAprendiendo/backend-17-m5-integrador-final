@@ -1,0 +1,52 @@
+{
+    "classes-guide": [
+        {
+            "tema": "typescript",
+            "fecha": "2024-05-20",
+            "ejercicio": "instalar dependecias con npm",
+            "link": "https://ada/alumnas.typescript.com/"
+        },
+        {
+            "tema": "repaso de typescript, interfaces",
+            "fecha": "2024-05-22",
+            "ejercicio": "formas de indicar tipo de datos",
+            "link": "https://ada/alumnas.repasotypescript.com/"
+        },
+        {
+            "tema": "github",
+            "fecha": "2024-05-24",
+            "ejercicio": "crear repo en github",
+            "link": "https://ada/alumnas.github.com/"
+        },
+        {
+            "tema": "modularizacion en typescript",
+            "fecha": "2024-05-27",
+            "ejercicio": "armar patron mvc",
+            "link": "https://ada/alumnas.modularizacion.com/"
+        },
+        {
+            "tema": "enums en typescript",
+            "fecha": "2024-05-29",
+            "ejercicio": "crear carpeta enum",
+            "link": "https://ada/alumnas.enum.com/"
+        },
+        {
+            "tema": "herencia y abstraccion",
+            "fecha": "2024-06-10",
+            "ejercicio": "crear clase persona",
+            "link": "https://ada/alumnas.class.com/"
+        },
+        {
+            "tema": "poo",
+            "fecha": "2024-06-14",
+            "ejercicio": "comienza desafio",
+            "link": "https://ada/alumnas.poo.com/"
+        },
+        {
+            "tema": "programacion asincronica",
+            "fecha": "2024-06-19",
+            "ejercicio": "crear funcion no secuencial",
+            "link": "https://ada/alumnas.programacionasincronica.com/"
+        }
+    ]
+}

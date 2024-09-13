@@ -3,6 +3,8 @@ import StudentsService from "./students";
 import { v4 as uuidv4 } from "uuid";
 import AuthModel from "../models/auth";
 import createHash from "../utils/create-hash";
+import { registerValidator } from "../schemas/authRegister";
+import { loginValidator } from "../schemas/authLogin";
 
 class AuthService {
   static async register(data: {
@@ -11,16 +13,19 @@ class AuthService {
     password: string;
   }) {
     try {
+      const result = registerValidator(data);
+      if (!result.success) throw new Error("Datos incorrectos");
+
       const studentId = await StudentsService.create({
-        name: data.name,
-        email: data.email,
+        name: result.data.name,
+        email: result.data.email,
       });
       const authDb = await AuthModel.read();
       const token = createHash(uuidv4());
       authDb.auth.push({
         id: uuidv4(),
         studentId: studentId,
-        password: createHash(data.password),
+        password: createHash(result.data.password),
         token: token,
       });
       AuthModel.write(authDb);
@@ -32,6 +37,9 @@ class AuthService {
 
   static async login(data: { email; password }) {
     try {
+      const result = loginValidator(data);
+      if (!result.success) throw new Error("Datos incorrectos");
+
       const student = await StudentsService.getByEmail(data.email);
       const studentAuth = await AuthService.getByStudentId(student.id);
 
